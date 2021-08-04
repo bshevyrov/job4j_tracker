@@ -17,5 +17,8 @@ public class DropArray {
         for (String s : namesWithoutNull) {
             System.out.println(s);
         }
+        String[] nm = {"Petr", null, "Ivan", "Stepan", "Fedor"};
+        System.arraycopy(nm, 2, nm, 1, 3);
+        System.out.println(Arrays.toString(nm));
     }
 }

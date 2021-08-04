@@ -12,22 +12,19 @@ public class Library {
         books[2] = cleanCode;
         books[3] = piterPen;
         System.out.println("All books in library.");
-        for (int i = 0; i < books.length; i++) {
-            Book bk = books[i];
+        for (Book bk : books) {
             System.out.println(bk.getName() + " - " + bk.getPages());
         }
         System.out.println("Switching first  and last book.");
         Book tmp = books[0];
         books[0] = books[3];
         books[3] = tmp;
-        for (int i = 0; i < books.length; i++) {
-            Book bk = books[i];
+        for (Book bk : books) {
             System.out.println(bk.getName() + " - " + bk.getPages());
         }
         System.out.println("Show only Clean Code.");
-        for (int i = 0; i < books.length; i++) {
-            Book bk = books[i];
-            if (bk.getName().equals("Clean Code")) {
+        for (Book bk : books) {
+            if ("Clean Code".equals(bk.getName())) {
                 System.out.println(bk.getName() + " - " + bk.getPages());
             }
         }

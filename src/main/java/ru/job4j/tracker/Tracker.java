@@ -50,6 +50,7 @@ public class Tracker {
         for (int index = 0; index < size; index++) {
             if (items[index].getId() == id) {
                 rsl = index;
+                break;
             }
         }
         return rsl;
@@ -57,10 +58,9 @@ public class Tracker {
 
     public boolean delete(int id) {
         int index = indexOf(id);
-        int length = size - index - 1;
         boolean rsl = index != -1;
         if (rsl) {
-            System.arraycopy(items, index + 1, items, index, length);
+            System.arraycopy(items, index + 1, items, index, size - index - 1);
             items[size - 1] = null;
             size--;
         }

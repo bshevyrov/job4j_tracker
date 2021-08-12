@@ -38,8 +38,8 @@ public class Item {
         this.name = name;
     }
 
-    public LocalDateTime getCreated() {
-        return created;
+    public String getCreated() {
+        return created.format(FORMATTER);
     }
 
     @Override
@@ -47,7 +47,6 @@ public class Item {
         return "Item{"
                 + "id=" + id
                 + ", name='" + name + '\''
-                + ", created=" + created.format(FORMATTER)
                 + '}';
     }
 }

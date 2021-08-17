@@ -6,22 +6,16 @@ public class UserStore {
         for (User user : users) {
             if (user.getUsername().equals(login)) {
                 return user;
-            } else {
-                throw new UserNotFoundException("User not found");
             }
         }
-        return null;
+        throw new UserNotFoundException("User not found");
     }
 
     public static boolean validate(User user) throws UserInvalidException {
-        boolean rsl = true;
-        if (!user.isValid()) {
+        if (!user.isValid() && user.getUsername().length() < 3) {
             throw new UserInvalidException("User not valid");
         }
-        if (user.getUsername().length() < 3) {
-            throw new UserInvalidException("Login too short");
-        }
-        return rsl;
+        return true;
     }
 
     public static void main(String[] args) {
